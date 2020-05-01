@@ -21,10 +21,10 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
-- task: ArchiveFiles@2
+- task: AzureFunctionApp@1
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
+    azureSubscription: 'Free Trial (36336351-367e-43b2-ac0d-f9c329c67cd8)'
+    appType: 'functionAppLinux'
+    appName: 'getPeople'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'DOCKER|microsoft/azure-functions-node8:2.0'
