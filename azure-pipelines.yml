@@ -23,8 +23,8 @@ steps:
 
 - task: AzureFunctionApp@1
   inputs:
-    azureSubscription: 'Free Trial (36336351-367e-43b2-ac0d-f9c329c67cd8)'
+    azureSubscription: 'Free Trial(36336351-367e-43b2-ac0d-f9c329c67cd8)'
     appType: 'functionAppLinux'
-    appName: 'getPeople'
+    appName: 'agltestfunction'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     runtimeStack: 'DOCKER|microsoft/azure-functions-node8:2.0'
